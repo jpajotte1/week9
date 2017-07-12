@@ -5,9 +5,12 @@ $(".gallery").masonry({
 });
 
 $(".touchevents .thumbnail").hammer().bind("press", function() {
-// Your code here
+$(this).addClass("open");
 });
 
 $(".touchevents .thumbnail").hammer().bind("swipe", function() {
-// Your code here
+$(this).find(".caption").animate({ left: "-100%" }, 500, function(){
+    $(this).attr("style", "");
+  });
+  $(this).removeClass("open");
 });
